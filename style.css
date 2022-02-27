@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color-1:#4158d0;
+    --bg-color-2:#c850c0;
+    --bg-color-3:#ffcc70;
+    --modal-color:#e26e70;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3))
+}
+
+.modal{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.open_modal{
+    padding: 10px 15px;
+    font-size: 17px;
+    border-radius: 7px;
+    border:none;
+    font-weight: 600;
+}
+
+.open_modal:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modal_inner {
+    width: 428px;
+    height: 215px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 175px auto;
+    position: relative;
+    animation: modalShow 0.3s linear;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--modal-color);
+    padding: 15px;
+    color: #fff;
+}
+
+ion-icon.icon_close {
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+ion-icon.icon_close:hover{
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.modal_body {
+    padding: 15px;
+}
+
+.modal_body h2 {
+    color: var(--modal-color);
+    padding-bottom: 15px;
+}
+
+.modal_footer {
+    text-align: right;
+    padding: 15px;
+}
+
+.btn_close {
+    display: inline-block;
+    padding: 7px 20px;
+    font-size: 15px;
+    background-color: var(--modal-color);
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.btn_close:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+/* modalshow animation*/
+@keyframes modalShow {
+    from{
+        top: -200px;
+        opacity: 0;
+    }
+
+    to{
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+
+

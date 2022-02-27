@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open_Modal</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button id="open_modal" class="open_modal">Open Modal</button>
+    <div class="modal hidden">
+        <div class="modal_inner">
+            <div class="modal_header">
+                <h3>Welcome to Website</h3>
+                <ion-icon class="icon_close" name="close-outline"></ion-icon>
+            </div>
+            <div class="modal_body">
+                <h2>Modal</h2>
+                <p>Đây là phần body chủa modal</p>
+            </div>
+            <div class="modal_footer">
+                <button class="btn_close" type="submit">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var btnOpen = document.querySelector('.open_modal');
+        var modal = document.querySelector('.modal');
+        var iconClose = document.querySelector('.icon_close');
+        var btnClose = document.querySelector('.btn_close');
+
+        function toggleModal(){
+            modal.classList.toggle('hidden');
+        }
+
+        
+        btnOpen.addEventListener('click',toggleModal);
+        btnClose.addEventListener('click', toggleModal)
+        iconClose.addEventListener('click', toggleModal)
+        modal.addEventListener('click', function(e){
+            if (e.target == e.currentTarget) {
+                toggleModal();
+            }
+        })
+
+
+        
+    </script>
+</body>
+</html>
